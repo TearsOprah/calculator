@@ -1,21 +1,29 @@
 .page {
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+
 }
 
 .calculator-grid {
   display: grid;
   justify-content: center;
   align-content: center;
-  min-height: 100vh;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(130px, auto) repeat(5, 100px);
+  min-height: 90vh;
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: minmax(110px, auto) repeat(5, 90px);
 }
 
 .calculator-grid button {
   cursor: pointer;
   font-size: 2rem;
   outline: none;
+  transition: all .5s;
 }
 
 .calculator-grid button:hover {
@@ -48,3 +56,38 @@
   color: white;
   font-size: 2.5rem;
 }
+
+.switch-btn {
+  display: inline-block;
+  width: 72px; /* ширина */
+  height: 38px; /* высота */
+  border-radius: 19px; /* радиус скругления */
+  background: linear-gradient(to right, #7f7f7f 0, #bfbfbf 40%, #7fd03e 60%, #118c4e 100%);
+  background-size: 180px 100%;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 300ms; /* анимация */
+}
+.switch-btn::after {
+  content: "";
+  height: 32px; /* высота кнопки */
+  width: 32px; /* ширина кнопки */
+  border-radius: 17px;
+  background: #fff; /* цвет кнопки */
+  top: 3px; /* положение кнопки по вертикали относительно основы */
+  left: 3px; /* положение кнопки по горизонтали относительно основы */
+  transition-duration: 300ms; /* анимация */
+  position: absolute;
+  z-index: 1;
+}
+.switch-on {
+  background-position-x: -100px;
+}
+.switch-on::after {
+  left: 37px;
+}
+
