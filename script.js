@@ -1,3 +1,5 @@
+
+
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
@@ -19,6 +21,7 @@ class Calculator {
     this._currentOperand = '';
     this._previousOperand = '';
     this.operation = undefined;
+
   }
 
   delete() {
@@ -77,12 +80,12 @@ class Calculator {
   updateDisplay() {
     this._currentOperandTextElement.textContent = this._currentOperand;
 
-
     // включим отображение текущей операции
     if (this.operation != null) {
       this._previousOperandTextElement.textContent =
         `${this._previousOperand} ${this.operation}`;
-
+    } else {
+      this._previousOperandTextElement.textContent = '';
     }
   }
 }
@@ -104,17 +107,19 @@ operationButtons.forEach(button => {
   })
 })
 
-equalsButton.addEventListener('click', button => {
+equalsButton.addEventListener('click', () => {
   calculator.compute();
   calculator.updateDisplay();
 })
 
-allClearButton.addEventListener('click', button => {
+allClearButton.addEventListener('click', () => {
   calculator.clear();
   calculator.updateDisplay();
 })
 
-deleteButton.addEventListener('click', button => {
+deleteButton.addEventListener('click', () => {
   calculator.delete();
   calculator.updateDisplay();
 })
+
+
