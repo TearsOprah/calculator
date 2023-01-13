@@ -7,6 +7,7 @@ const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
+const plusMinusButton = document.querySelector('[data-plus-minus]');
 
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
@@ -15,6 +16,10 @@ class Calculator {
 
     // при создании калькулятора установим первоначальные значения
     this.clear();
+  }
+
+  plusMinus() {
+    this._currentOperand = -this._currentOperand;
   }
 
   clear() {
@@ -119,6 +124,11 @@ allClearButton.addEventListener('click', () => {
 
 deleteButton.addEventListener('click', () => {
   calculator.delete();
+  calculator.updateDisplay();
+})
+
+plusMinusButton.addEventListener('click', () => {
+  calculator.plusMinus();
   calculator.updateDisplay();
 })
 
