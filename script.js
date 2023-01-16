@@ -11,11 +11,19 @@ const plusMinusButton = document.querySelector('[data-plus-minus]');
 // находим кнопку и всю страницу
 const themeSwitchButton = document.querySelector('.switch-btn');
 const page = document.querySelector('.page');
+const output = document.querySelector('.output');
+const calculatorGrid = document.querySelector('.calculator-grid');
+const buttons = document.querySelectorAll('.button')
 
 // переключатель
 const changeTheme = () => {
-  page.classList.toggle('page-dark');
+  page.classList.toggle('page-alt');
   themeSwitchButton.classList.toggle('switch-on');
+  output.classList.toggle('output-alt');
+  calculatorGrid.classList.toggle('calculator-grid-alt');
+  buttons.forEach((item) => {
+    item.classList.toggle('button-alt');
+  })
 }
 
 // слушатель на кнопку темы
@@ -80,7 +88,7 @@ class Calculator {
       case '*':
         result = previous * current;
         break;
-      case '÷':
+      case '/':
         result = previous / current;
         break;
       default:
