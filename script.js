@@ -1,5 +1,3 @@
-
-
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
@@ -8,6 +6,20 @@ const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
 const plusMinusButton = document.querySelector('[data-plus-minus]');
+
+
+// находим кнопку и всю страницу
+const themeSwitchButton = document.querySelector('.switch-btn');
+const page = document.querySelector('.page');
+
+// переключатель
+const changeTheme = () => {
+  page.classList.toggle('page-dark');
+  themeSwitchButton.classList.toggle('switch-on');
+}
+
+// слушатель на кнопку темы
+themeSwitchButton.addEventListener('click', changeTheme);
 
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {

@@ -1,20 +1,28 @@
 .page {
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.page-dark {
+  background-color: #25003f;
 }
 
 .container {
-
+  width: 360px;
+  margin: 10vh auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 10px;
 }
 
 .calculator-grid {
+  margin: 0 auto;
   display: grid;
   justify-content: center;
   align-content: center;
-  min-height: 90vh;
   grid-template-columns: repeat(4, 90px);
   grid-template-rows: minmax(110px, auto) repeat(5, 90px);
 }
@@ -72,6 +80,7 @@
   position: relative;
   transition-duration: 300ms; /* анимация */
 }
+
 .switch-btn::after {
   content: "";
   height: 32px; /* высота кнопки */
