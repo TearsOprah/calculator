@@ -1,3 +1,12 @@
+:root {
+  --color-1-theme-1: #e1dcd8;
+  --color-2-theme-1: #dfceb1;
+  --color-3-theme-1: #938e67;
+  --color-4-theme-1: #aa7c6b;
+  --color-5-theme-1: #7c4d46;
+  --color-6-theme-1: #342222;
+}
+
 .page {
   padding: 0;
   margin: 0;
@@ -16,6 +25,7 @@
   justify-content: center;
   align-items: end;
   gap: 10px;
+  border: 1px red solid;
 }
 
 .calculator-grid {
@@ -24,7 +34,10 @@
   justify-content: center;
   align-content: center;
   grid-template-columns: repeat(4, 90px);
-  grid-template-rows: minmax(110px, auto) repeat(5, 90px);
+  grid-template-rows: minmax(110px, auto) repeat(5, 50px);
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
+  border: 1px green solid;
 }
 
 .calculator-grid button {
@@ -32,6 +45,7 @@
   font-size: 2rem;
   outline: none;
   transition: all .5s;
+  border: 0;
 }
 
 .calculator-grid button:hover {
